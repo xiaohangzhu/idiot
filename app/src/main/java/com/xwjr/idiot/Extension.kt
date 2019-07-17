@@ -27,7 +27,7 @@ fun Context.isExistActivity(activity: Activity): Boolean {
         }
         return flag
     } catch (e: Exception) {
-        Log.e("idiot","判断指定Activity是否存在时发生异常")
+        Log.e("idiot", "判断指定Activity是否存在时发生异常")
         e.printStackTrace()
         return false
     }
@@ -39,13 +39,13 @@ fun Context.isExistActivity(activity: Activity): Boolean {
  */
 fun Context.setTopApp() {
     try {
-        if (!MyApplication.open){
+        if (LocalData.getData(this, "isOpen") != "true") {
             return
         }
-        if (MyApplication.mActivityCount == 1){
+        if (MyApplication.mActivityCount == 1) {
             return
-        }else{
-            Log.e("idiot","app已切换到后台，需要置顶操作")
+        } else {
+            Log.e("idiot", "app已切换到后台，需要置顶操作")
         }
         //    if (!isRunningForeground()) {
         val activityManager = this.getSystemService(Context.ACTIVITY_SERVICE)
@@ -59,8 +59,8 @@ fun Context.setTopApp() {
             }
         }
 //    }
-    }catch (e:Exception){
-        Log.e("idiot","将应用进程置顶时发生异常")
+    } catch (e: Exception) {
+        Log.e("idiot", "将应用进程置顶时发生异常")
         e.printStackTrace()
     }
 }

@@ -46,8 +46,8 @@ public class WheelView extends ScrollView {
     private LinearLayout views;
 
     private String selectColor= "#2dcdaf";
-    private String defaultColor = "#838e8c";
-    private String separateColor = "#d5e2e0";
+    private String defaultColor = "#2dcdaf";
+    private String separateColor = "#00000000";
 
 
     public WheelView(Context context) {

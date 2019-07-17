@@ -9,13 +9,11 @@ import java.util.*
 import android.app.PendingIntent
 
 
-
 class MyApplication : Application() {
 
 
     companion object {
         var mActivityCount = 0
-        var open = true
     }
 
     override fun onCreate() {
@@ -52,20 +50,22 @@ class MyApplication : Application() {
                 mActivityCount--
                 Log.i("idiot", "mActivityCount：$mActivityCount")
                 if (mActivityCount == 0) {
-                    val intent = Intent(this@MyApplication, MainActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                    val pendingIntent = PendingIntent.getActivity(this@MyApplication, 0, intent, 0)
-                    try {
-                        pendingIntent.send()
-                    } catch (e: PendingIntent.CanceledException) {
-                        e.printStackTrace()
-                    }
-                    if (isExistActivity(MainActivity())) {
-                        setTopApp()
-                    } else {
+                    if (LocalData.getData(this@MyApplication, "isOpen") == "true") {
                         val intent = Intent(this@MyApplication, MainActivity::class.java)
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                        startActivity(intent)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                        val pendingIntent = PendingIntent.getActivity(this@MyApplication, 0, intent, 0)
+                        try {
+                            pendingIntent.send()
+                        } catch (e: PendingIntent.CanceledException) {
+                            e.printStackTrace()
+                        }
+                        if (isExistActivity(MainActivity())) {
+                            setTopApp()
+                        } else {
+                            val intent2 = Intent(this@MyApplication, MainActivity::class.java)
+                            intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            startActivity(intent2)
+                        }
                     }
                 }
             }

@@ -7,45 +7,86 @@
     android:background="#99000000"
     tools:context=".MainActivity">
 
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:text=""
+        android:visibility="gone"
+        android:textColor="#2dcdaf"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv_time_millisecond"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_time_millisecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:text=""
+        android:visibility="gone"
+        android:textColor="#2dcdaf"
+        app:layout_constraintLeft_toRightOf="@id/tv_time"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_time"
+        app:layout_constraintRight_toRightOf="parent" />
+
     <LinearLayout
+        android:id="@+id/ll_wheel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.xwjr.idiot.WheelView
             android:id="@+id/hours"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:text=":"
+            android:textColor="#2dcdaf"
+            android:textSize="15sp" />
 
         <com.xwjr.idiot.WheelView
             android:id="@+id/minute"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:text=":"
+            android:textColor="#2dcdaf"
+            android:textSize="15sp" />
 
         <com.xwjr.idiot.WheelView
             android:id="@+id/second"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" />
     </LinearLayout>
 
-
-    <TextView
-        android:id="@+id/tv_close"
+    <ImageView
+        android:id="@+id/iv_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="取消!"
-        android:textColor="#77ffffff"
+        android:layout_marginBottom="200dp"
+        android:src="@mipmap/start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintRight_toRightOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
