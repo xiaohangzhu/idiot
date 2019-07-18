@@ -50,7 +50,7 @@ class MyApplication : Application() {
                 mActivityCount--
                 Log.i("idiot", "mActivityCount：$mActivityCount")
                 if (mActivityCount == 0) {
-                    if (LocalData.getData(this@MyApplication, "isOpen") == "true") {
+                    if (isOpenCountDown()) {
                         val intent = Intent(this@MyApplication, MainActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
                         val pendingIntent = PendingIntent.getActivity(this@MyApplication, 0, intent, 0)
