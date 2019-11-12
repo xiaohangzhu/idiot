@@ -27,8 +27,9 @@
  
   示例图:
   
-  ![操作一](https://s2.ax1x.com/2019/08/09/ebSFDs.jpg)
-  ![操作二](https://s2.ax1x.com/2019/08/09/ebSSC8.jpg)
+  ![操作一](https://s2.ax1x.com/2019/11/12/M1oREj.png)
+  ![操作二](https://s2.ax1x.com/2019/11/12/M1ovP1.png)
+  ![操作三](https://s2.ax1x.com/2019/11/12/M1TPqe.png)
   
 ## 反馈
   qq:1017664095
