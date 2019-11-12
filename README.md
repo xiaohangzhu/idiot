@@ -13,7 +13,8 @@
 ## 下载链接/二维码
   https://zxh-apk.oss-cn-beijing.aliyuncs.com/idiot.apk
   
-  ![二维码](https://s2.ax1x.com/2019/08/09/eHxFzQ.png)
+  ![二维码](https://s2.ax1x.com/2019/11/12/M1BqfA.png) 
+  
    
 ## 使用方式
   1.下载安装
